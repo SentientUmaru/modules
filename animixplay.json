@@ -58,15 +58,15 @@
           "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
           "Referer": "https://animixplay.to"
         },
-        "mainBody": "getElement(\"body\")",
+        "mainBody": "getElement(\"videocontainer\")",
         "items": {
-          "itemSelector": "getElement(\"iframe.movie\")",
-          "sourceURL": {
-            "sourceURL": "getElement(\" \").params.src",
-            "seperator": ""
-          },
+          "itemSelector": "getElement(\"option.dropdown-item\")",
           "sourceName": {
             "sourceName": "getElement(\" \").text",
+            "seperator": ""
+          },
+          "sourceURL": {
+            "sourceURL": "getElement(\"player1\").params.value",
             "seperator": ""
           }
         }
