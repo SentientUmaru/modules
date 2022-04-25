@@ -4,7 +4,7 @@
     "name": "GenoAnime",
     "acronym": "GA",
     "description": "Scrapes anime from genoanime's website",
-    "version": 1.1,
+    "version": 1.2,
     "language": ["JPN", "ENG"],
     "baseURL": "https://genoanime.com",
     "developer": "SentientUmaru",
@@ -40,7 +40,7 @@
           "animeURL": {
             "animeURL":
                 "getElement(\"div.product__item__pic\").params.data-setbg",
-            "seperator": "getRegex(\".*\/(.*)\\.\")"
+            "seperator": "getRegex(\".*\/(.*)\.\")"
           },
           "yearInfo": {
             "animeYear": "getElement(\"div.ep\").text",
