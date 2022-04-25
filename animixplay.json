@@ -25,13 +25,13 @@
   "search": [
     {
       "request": {
-        "url": "/results?q=<ANIME_NAME>",
+        "url": "/?q=<ANIME_NAME>",
         "method": "GET",
         "headers": {
           "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
           "Referer": "https://animixplay.to"
         },
-        "mainBody": "getElement(\"div.movie\")",
+        "mainBody": "getElement(\"div.items\")",
         "items": {
           "itemSelector": "getElement(\"div.card\")",
           "animeName": {
@@ -40,7 +40,7 @@
           },
           "animeURL": {
             "animeURL": "getElement(\"h6 > a\").params.href",
-            "seperator": "-episode-1"
+            "seperator": ""
           },
           "urlExtras": {
             "animeURL": "baseURL + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
