@@ -40,7 +40,7 @@
           },
           "animeURL": {
             "animeURL": "getElement(\"h5 > a\").params.href",
-            "seperator": "/anime"
+            "seperator": "/details"
           },
           "yearInfo": {
             "animeYear": "getElement(\"div.ep\").text",
