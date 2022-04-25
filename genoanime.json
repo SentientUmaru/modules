@@ -38,8 +38,9 @@
             "seperator": ""
           },
           "animeURL": {
-            "animeURL": "getElement(\"h5 > a\").params.href",
-            "seperator": "/anime"
+            "animeURL":
+                "getElement(\"div.product__item__pic\").params.data-setbg",
+            "seperator": "getRegex(\".*\/(.*)\.\")"
           },
           "yearInfo": {
             "animeYear": "getElement(\"div.ep\").text",
