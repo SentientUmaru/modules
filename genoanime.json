@@ -4,7 +4,7 @@
     "name": "GenoAnime",
     "acronym": "GA",
     "description": "Scrapes anime from genoanime's website",
-    "version": 1.11,
+    "version": 1.0,
     "language": ["JPN", "ENG"],
     "baseURL": "https://genoanime.com",
     "developer": "SentientUmaru",
