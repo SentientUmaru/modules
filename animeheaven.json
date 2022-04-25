@@ -3,7 +3,7 @@
       "apiVersion": 0.1,
       "name": "AnimeHeaven",
       "acronym": "heaven",
-      "description": "Scrapes data from AnimeHeave's website",
+      "description": "Scrapes data from AnimeHeaven's website",
       "version": 1.0,
       "language": ["JPN", "ENG"],
       "baseURL": "https://animeheaven.ru",
