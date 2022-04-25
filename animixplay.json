@@ -7,7 +7,7 @@
     "version": 1.0,
     "language": ["JPN", "ENG"],
     "baseURL": "https://animixplay.to",
-    "developer": "ScaryUnicorn",
+    "developer": "SentientUmaru",
     "developerURL": "https://github.com/SentientUmaru",
     "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/animixplay.json",
     "searchRequired": true,
