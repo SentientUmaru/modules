@@ -1,0 +1,79 @@
+{
+  "moduleInfo": {
+    "apiVersion": 0.1,
+    "name": "9Anime",
+    "acronym": "9A",
+    "description": "Scrapes data from 5anime.net website",
+    "version": 1.0,
+    "language": ["JPN", "ENG"],
+    "baseURL": "https://9anime.id",
+    "developer": "SentientUmaru",
+    "developerURL": "https://github.com/SentientUmaru",
+    "moduleURL": "https://raw.githubusercontent.com/ScaryUnicorn/Daijobu-Modules/main/modules/5anime.json",
+    "episodesRequired": false,
+    "dubIdentifier": " (dub)"
+  },
+  "global": {
+    "headers": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+      "Referer": "https://9anime.id"
+    },
+    "seperator": "+",
+    "noResolve": []
+  },
+  "search": [
+    {
+      "request": {
+        "url": "/search?keyword=<ANIME_NAME>",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+          "Referer": "https://9anime.id"
+        },
+        "mainBody": "getElement(\"div.body\")",
+        "items": {
+          "itemSelector": "getElement(\"poster\")",
+          "animeName": {
+            "animeName": "getElement(\"h5 > a\").text",
+            "seperator": ""
+          },
+          "animeURL": {
+            "animeURL": "getElement(\"h5 > a\").params.href",
+            "seperator": ""
+          },
+          "yearInfo": {
+            "animeYear": "getElement(\"div.ep\").text",
+            "seperator": ""
+          },
+          "urlExtras": {
+            "animeURL": "baseURL + '/watch' + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
+          }
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "request": {
+        "url": "animeURL",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+          "Referer": "https://9anime.id"
+        },
+        "mainBody": "getElement(\"div.anime__video__player\")",
+        "items": {
+          "itemSelector": "getElement(\"option.dropdown-item\")",
+          "sourceName": {
+            "sourceName": "getElement(\" \").text",
+            "seperator": ""
+          },
+          "sourceURL": {
+            "sourceURL": "getElement(\" \").params.value",
+            "seperator": ""
+          }
+        }
+      }
+    }
+  ]
+}
