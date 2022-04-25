@@ -9,7 +9,7 @@
     "baseURL": "https://animixplay.to",
     "developer": "ScaryUnicorn",
     "developerURL": "https://github.com/SentientUmaru",
-    "moduleURL": "https://raw.githubusercontent.com/ScaryUnicorn/Daijobu-Modules/main/modules/anistream.json",
+    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/animixplay.json",
     "searchRequired": true,
     "episodesRequired": false,
     "dubIdentifier": " (dub)"
