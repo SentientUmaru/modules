@@ -1,77 +1,78 @@
 {
-  "apiVersion": 0.11,
-  "name": "GenoAnime",
-  "acronym": "GA",
-  "description": "Scrapes anime from genoanime's website",
-  "version": 1.0,
-  "language": ["JPN", "ENG"],
-  "baseURL": "https://genoanime.com",
-  "developer": "SentientUmaru",
-  "developerURL": "https://github.com/SentientUmaru",
-  "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json",
-  "episodesRequired": false,
-  "searchRequired": true,
-  "dubIdentifier": " (dub)"
+  "moduleInfo": {
+    "apiVersion": 0.11,
+    "name": "GenoAnime",
+    "acronym": "GA",
+    "description": "Scrapes anime from genoanime's website",
+    "version": 1.0,
+    "language": ["JPN", "ENG"],
+    "baseURL": "https://genoanime.com",
+    "developer": "SentientUmaru",
+    "developerURL": "https://github.com/SentientUmaru",
+    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json",
+    "episodesRequired": false,
+    "searchRequired": true,
+    "dubIdentifier": " (dub)"
 },
 "global": {
-  "headers": {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-    "Referer": "https://genoanime.com"
-  },
-  "seperator": "+",
-  "noResolve": []
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+        "Referer": "https://genoanime.com"
+    },
+    "seperator": "+",
+    "noResolve": []
 },
 "search": [{
-  "request": {
-    "url": "/data/searchdata-test.php",
-    "body": "anime=<ANIME_NAME>",
-    "method": "POST",
-    "headers": {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-      "Referer": "https://genoanime.com",
-      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    },
-    "mainBody": "getElement(\"span\")",
-    "items": {
-      "itemSelector": "getElement(\"div.product__item\")",
-      "animeName": {
-        "animeName": "getElement(\"h5\").text",
-        "seperator": ""
-      },
-      "animeURL": {
-        "animeURL": "getElement(\"div.product__item__pic\").params.data-setbg",
-        "seperator": "getRegex(\".*\/(.*)\\.\").lower"
-      },
-      "yearInfo": {
-        "animeYear": "getElement(\"div.ep\").text",
-        "seperator": ""
-      },
-      "urlExtras": {
-        "animeURL": "baseURL + '/watch?name=' + animeURL + '&episode=' + '<EPNUMB>'"
-      }
+    "request": {
+        "url": "/data/searchdata-test.php",
+        "body": "anime=<ANIME_NAME>",
+        "method": "POST",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+            "Referer": "https://genoanime.com",
+            "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        "mainBody": "getElement(\"span\")",
+        "items": {
+            "itemSelector": "getElement(\"div.product__item\")",
+            "animeName": {
+                "animeName": "getElement(\"h5\").text",
+                "seperator": ""
+            },
+            "animeURL": {
+                "animeURL": "getElement(\"div.product__item__pic\").params.data-setbg",
+                "seperator": "getRegex(\".*\/(.*)\\.\").lower"
+            },
+            "yearInfo": {
+                "animeYear": "getElement(\"div.ep\").text",
+                "seperator": ""
+            },
+            "urlExtras": {
+                "animeURL": "baseURL + '/watch?name=' + animeURL + '&episode=' + '<EPNUMB>'"
+            }
+        }
     }
-  }
 }],
 "sources": [{
-  "request": {
-    "url": "animeURL",
-    "method": "GET",
-    "headers": {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-      "Referer": "https://genoanime.com"
-    },
-    "mainBody": "getElement(\"div.anime__video__player\")",
-    "items": {
-      "itemSelector": "getElement(\"iframe\")",
-      "sourceName": {
-        "sourceName": "getElement(\" \").text",
-        "seperator": ""
-      },
-      "sourceURL": {
-        "sourceURL": "getElement(\" \").params.src",
-        "seperator": ""
-      }
+    "request": {
+        "url": "animeURL",
+        "method": "GET",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+            "Referer": "https://genoanime.com"
+        },
+        "mainBody": "getElement(\"div.anime__video__player\")",
+        "items": {
+            "itemSelector": "getElement(\"iframe\")",
+            "sourceName": {
+                "sourceName": "getElement(\" \").text",
+                "seperator": ""
+            },
+            "sourceURL": {
+                "sourceURL": "getElement(\" \").params.src",
+                "seperator": ""
+            }
+        }
     }
-  }
 }]
 }
