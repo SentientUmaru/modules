@@ -9,7 +9,7 @@
     "baseURL": "https://genoanime.com",
     "developer": "SentientUmaru",
     "developerURL": "https://github.com/SentientUmaru",
-    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json",
+    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/9anime.json",
     "episodesRequired": false,
     "dubIdentifier": " (dub)"
   },
