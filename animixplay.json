@@ -22,33 +22,37 @@
     "seperator": "+",
     "noResolve": []
   },
-  "search": [
-    {
+  "search": [{
       "request": {
-        "url": "/?q=<ANIME_NAME>",
-        "method": "GET",
-        "headers": {
-          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-          "Referer": "https://animixplay.to"
-        },
-        "mainBody": "getElement(\"div.items\")",
-        "items": {
-          "itemSelector": "getElement(\"div.card\")",
-          "animeName": {
-            "animeName": "getElement(\"h6 > a\").text",
-            "seperator": ""
+          "url": "/data/searchdata-test.php",
+          "body": "anime=<ANIME_NAME>",
+          "method": "POST",
+          "headers": {
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+              "Referer": "https://animixplay.to",
+              "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
           },
-          "animeURL": {
-            "animeURL": "getElement(\"h6 > a\").params.href",
-            "seperator": ""
-          },
-          "urlExtras": {
-            "animeURL": "baseURL + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
+          "mainBody": "getElement(\"span\")",
+          "items": {
+              "itemSelector": "getElement(\"div.product__item\")",
+              "animeName": {
+                  "animeName": "getElement(\"h5\").text",
+                  "seperator": ""
+              },
+              "animeURL": {
+                  "animeURL": "getElement(\"div.product__item__pic\").params.data-setbg",
+                  "seperator": "getRegex(\".*\/(.*)\\.\").lower"
+              },
+              "yearInfo": {
+                  "animeYear": "getElement(\"div.ep\").text",
+                  "seperator": ""
+              },
+              "urlExtras": {
+                  "animeURL": "baseURL + '/watch?name=' + animeURL + '&episode=' + '<EPNUMB>'"
+              }
           }
-        }
       }
-    }
-  ],
+  }],
   "sources": [
     {
       "request": {
