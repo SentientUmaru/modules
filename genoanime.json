@@ -30,7 +30,7 @@
           "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
           "Referer": "https://genoanime.com"
         },
-        "mainBody": "getElement(\"animelisting\")",
+        "mainBody": "getElement(\"div.animelisting\")",
         "items": {
           "itemSelector": "getElement(\"div.product__item\")",
           "animeName": {
@@ -40,7 +40,7 @@
           "animeURL": {
             "animeURL":
                 "getElement(\"div.product__item__pic\").params.data-setbg",
-            "seperator":"getRegex(.*poster\/(.*)\.)"
+            "seperator":"getRegex(.*poster\/(.*)........)"
           },
           "yearInfo": {
             "animeYear": "getElement(\"div.ep\").text",
