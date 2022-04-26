@@ -9,5 +9,7 @@ AnimeHeaven - Not Working
 9Anime - Not Working
 
 App that requires these un-official modules will probably require the raw of the github link unless that changes in the future
+
 Only GenoAnime works, Dont waste your time adding the others
+
 GenoAnimeT2.json is where i test in SO probably dont add it 
