@@ -8,7 +8,7 @@ AnimeHeaven - Not Working
 
 9Anime - Removed
 
-AnimeRush - Added
+AnimeRush - Added and not working
 
 App that requires these un-official modules will probably require the raw of the github link unless that changes in the future
 
