@@ -31,7 +31,7 @@
               "Referer": "https://animixplay.to",
               "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
           },
-          "mainBody": "getElement(\"div.resultplace\")",
+          "mainBody": "getElement(\"div.resultm\")",
           "items": {
               "itemSelector": "getElement(\"li\")",
               "animeName": {
@@ -39,7 +39,7 @@
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"div.img\").params.data-setbg",
+                  "animeURL": "getElement(\"resultimg\").params.data-setbg",
                   "seperator": "/v1"
               },
               "yearInfo": {
