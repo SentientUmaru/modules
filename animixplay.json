@@ -1,6 +1,6 @@
 {
   "moduleInfo": {
-    "apiVersion": 0.1,
+    "apiVersion": 1.11,
     "name": "AniMixPlay",
     "acronym": "AMP",
     "description": "Scrapes data from AniMixPlay's website",
