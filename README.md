@@ -6,7 +6,9 @@ AniMixPlay - Not Working
 
 AnimeHeaven - Not Working
 
-9Anime - Not Working
+9Anime - Removed
+
+AnimeRush - Added
 
 App that requires these un-official modules will probably require the raw of the github link unless that changes in the future
 
