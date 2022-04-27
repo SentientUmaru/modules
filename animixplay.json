@@ -40,7 +40,7 @@
               },
               "animeURL": {
                   "animeURL": "getElement(\"div.img\").params.data-setbg",
-                  "seperator": "getRegex(\".*\/(.*)\\.\").lower"
+                  "seperator": "getRegex(.*\/(.*).p).lower"
               },
               "yearInfo": {
                   "animeYear": "getElement(\"div.ep\").text",
