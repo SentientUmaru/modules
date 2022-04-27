@@ -39,7 +39,7 @@
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"div.resultimg\").params.data-setbg",
+                  "animeURL": "getElement(\"div.searchimg\").params.data-setbg",
                   "seperator": "/v1"
               },
               "yearInfo": {
