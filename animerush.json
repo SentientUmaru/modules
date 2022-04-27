@@ -1,15 +1,15 @@
 {
   "moduleInfo": {
     "apiVersion": 0.11,
-    "name": "AniMixPlay",
-    "acronym": "AMP",
+    "name": "AnimeRush",
+    "acronym": "AR",
     "description": "Scrapes data from AniMixPlay's website",
     "version": 1.0,
     "language": ["JPN", "ENG"],
-    "baseURL": "https://animixplay.to",
+    "baseURL": "https://www.animerush.tv",
     "developer": "SentientUmaru",
     "developerURL": "https://github.com/SentientUmaru",
-    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/animixplay.json",
+    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json",
     "searchRequired": true,
     "episodesRequired": false,
     "dubIdentifier": " (dub)"
@@ -17,37 +17,37 @@
   "global": {
     "headers": {
       "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-      "Referer": "https://animixplay.to"
+      "Referer": "https://www.animerush.tv"
     },
     "seperator": "+",
     "noResolve": []
   },
   "search": [{
       "request": {
-          "url": "/?q=<ANIME_NAME>",
-          "method": "POST",
+          "url": "/search.php?searchquery=<ANIME_NAME>",
+          "method": "GET",
           "headers": {
               "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-              "Referer": "https://animixplay.to",
+              "Referer": "https://www.animerush.tv",
               "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
           },
-          "mainBody": "getElement(\"div.resultplace\")",
+          "mainBody": "getElement(\"div.left-column\")",
           "items": {
-              "itemSelector": "getElement(\"div.result1\")",
+              "itemSelector": "getElement(\"div.search-page_in_box_mid_link\")",
               "animeName": {
                   "animeName": "getElement(\"h5\").text",
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"div.img\").params.data-setbg",
-                  "seperator": "getRegex(.*\/(.*).p).lower"
+                  "animeURL": "getElement(\"div.anime-search-image\").params.data-setbg",
+                  "seperator": "/anime"
               },
               "yearInfo": {
                   "animeYear": "getElement(\"div.ep\").text",
                   "seperator": ""
               },
               "urlExtras": {
-                  "animeURL": "baseURL + '/v1?name=' + animeURL + '&episode=' + '<EPNUMB>'"
+                  "animeURL": "baseURL + '/anime?name=' + animeURL + '&episode=' + '<EPNUMB>'"
               }
           }
       }
@@ -59,9 +59,9 @@
         "method": "GET",
         "headers": {
           "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-          "Referer": "https://animixplay.to"
+          "Referer": "https://www.animerush.tv"
         },
-        "mainBody": "getElement(\"videocontainer\")",
+        "mainBody": "getElement(\"div.media-parent\")",
         "items": {
           "itemSelector": "getElement(\"option.dropdown-item\")",
           "sourceName": {
@@ -69,7 +69,7 @@
             "seperator": ""
           },
           "sourceURL": {
-            "sourceURL": "getElement(\"player1\").params.value",
+            "sourceURL": "getElement(\"div.player\").params.value",
             "seperator": ""
           }
         }
