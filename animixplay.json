@@ -1,6 +1,6 @@
 {
   "moduleInfo": {
-    "apiVersion": 1.11,
+    "apiVersion": 0.11,
     "name": "AniMixPlay",
     "acronym": "AMP",
     "description": "Scrapes data from AniMixPlay's website",
@@ -33,13 +33,13 @@
           },
           "mainBody": "getElement(\"div.resultm\")",
           "items": {
-              "itemSelector": "getElement(\"li\")",
+              "itemSelector": "getElement(\"searchresult\")",
               "animeName": {
                   "animeName": "getElement(\"h5\").text",
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"resultimg\").params.data-setbg",
+                  "animeURL": "getElement(\"div.resultimg\").params.data-setbg",
                   "seperator": "/v1"
               },
               "yearInfo": {
