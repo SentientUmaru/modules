@@ -1,78 +1,80 @@
 {
-  "moduleInfo": {
-    "apiVersion": 0.11,
-    "name": "AnimeRush",
-    "acronym": "AR",
-    "description": "Scrapes data from AnimeRush's website",
-    "version": 1.0,
-    "language": ["JPN", "ENG"],
-    "baseURL": "https://www.animerush.tv",
-    "developer": "SentientUmaru",
-    "developerURL": "https://github.com/SentientUmaru",
-    "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json",
-    "searchRequired": true,
-    "episodesRequired": false,
-    "dubIdentifier": " (dub)"
-  },
-  "global": {
-    "headers": {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-      "Referer": "https://www.animerush.tv"
+    "moduleInfo": {
+      "apiVersion": 0.11,
+      "name": "AnimeRush",
+      "acronym": "AR",
+      "description": "Scrapes anime from AnimeRush's website",
+      "version": 1.0,
+      "language": ["JPN", "ENG"],
+      "baseURL": "https://www.animerush.tv",
+      "developer": "SentientUmaru",
+      "developerURL": "https://github.com/SentientUmaru",
+      "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json",
+      "searchRequired": true,
+      "episodesRequired": false,
+      "dubIdentifier": " (dub)"
     },
-    "seperator": "+",
-    "noResolve": []
-  },
-  "search": [{
-      "request": {
+    "global": {
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+        "Referer": "https://www.animerush.tv"
+      },
+      "seperator": "%20",
+      "noResolve": []
+    },
+    "search": [
+      {
+        "request": {
           "url": "/search.php?searchquery=<ANIME_NAME>",
           "method": "GET",
           "headers": {
-              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-              "Referer": "https://www.animerush.tv"
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+            "Referer": "https://www.animerush.tv"
           },
-          "mainBody": "getElement(\"div.main-conent\")",
+          "mainBody": "getElement(\"div.left-column\")",
           "items": {
-              "itemSelector": "getElement(\"div.search-page_in_box_mid_link\")",
-              "animeName": {
-                  "animeName": "getElement(\"h5\").text",
-                  "seperator": ""
-              },
-              "animeURL": {
-                  "animeURL": "getElement(\"div.anime-search-image\").params.data-setbg",
-                  "seperator": "/anime"
-              },
-              "yearInfo": {
-                  "animeYear": "getElement(\"div.ep\").text",
-                  "seperator": ""
-              },
-              "urlExtras": {
-                  "animeURL": "baseURL + '/anime?name=' + animeURL + '&episode=' + '<EPNUMB>'"
-              }
-          }
-      }
-  }],
-  "sources": [
-    {
-      "request": {
-        "url": "animeURL",
-        "method": "GET",
-        "headers": {
-          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-          "Referer": "https://www.animerush.tv"
-        },
-        "mainBody": "getElement(\"div.media-parent\")",
-        "items": {
-          "itemSelector": "getElement(\"option.dropdown-item\")",
-          "sourceName": {
-            "sourceName": "getElement(\" \").text",
-            "seperator": ""
-          },
-          "sourceURL": {
-            "sourceURL": "getElement(\"div.player\").params.value",
-            "seperator": ""
+            "itemSelector": "getElement(\"div.search-page_in_box_mid_link\")",
+            "animeName": {
+              "animeName": "getElement(\"h3\").params.title",
+              "seperator": ""
+            },
+            "animeURL": {
+              "animeURL": "getElement(\"div.search-page_in_box_mid_link > a\").params.href",
+              "seperator": "/category/"
+            },
+            "yearInfo": {
+              "animeYear": "getElement(\"p.released\").text",
+              "seperator": "Released: "
+            },
+            "urlExtras": {
+              "animeURL": "baseURL + '/' + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
+            }
           }
         }
       }
-    }
-  ]
-}
+    ],
+    "sources": [
+      {
+        "request": {
+          "url": "animeURL",
+          "method": "GET",
+          "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+            "Referer": "https://www.animerush.tv"
+          },
+          "mainBody": "getElement(\"div.anime_muti_link > ul\")",
+          "items": {
+            "itemSelector": "getElement(\"li\")",
+            "sourceName": {
+              "sourceName": "getElement(\"a\").text",
+              "seperator": "Choose this server"
+            },
+            "sourceURL": {
+              "sourceURL": "getElement(\"a\").params.data-video",
+              "seperator": ""
+            }
+          }
+        }
+      }
+    ]
+  }
