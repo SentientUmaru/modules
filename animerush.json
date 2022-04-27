@@ -1,5 +1,5 @@
 {
-    "moduleInfo": {
+  "moduleInfo": {
       "apiVersion": 0.11,
       "name": "AnimeRush",
       "acronym": "AR",
@@ -13,68 +13,60 @@
       "searchRequired": true,
       "episodesRequired": false,
       "dubIdentifier": " (dub)"
-    },
-    "global": {
+  },
+  "global": {
       "headers": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-        "Referer": "https://www.animerush.tv"
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+          "Referer": "https://www.animerush.tv"
       },
       "seperator": "+",
       "noResolve": []
-    },
-    "search": [
-      {
-        "request": {
+  },
+  "search": [{
+      "request": {
           "url": "/search.php?searchquery=<ANIME_NAME>",
           "method": "GET",
           "headers": {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-            "Referer": "https://www.animerush.tv"
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+              "Referer": "https://www.animerush.tv"
           },
-          "mainBody": "getElement(\"div.left-column\")",
+          "mainBody": "getElement(\"div.amin_box_mid\")",
           "items": {
-            "itemSelector": "getElement(\"div.search-page_in_box_mid_link\")",
-            "animeName": {
-              "animeName": "getElement(\"h3\").params.title",
-              "seperator": ""
-            },
-            "animeURL": {
-              "animeURL": "getElement(\"div.search-page_in_box_mid_link > a\").params.href",
-              "seperator": ""
-            },
-            "yearInfo": {
-              "animeYear": "getElement(\"p.released\").text",
-              "seperator": ""
-            },
-            "urlExtras": {
-              "animeURL": "baseURL + '/' + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
-            }
+              "itemSelector": "getElement(\"div.search-page_in_box_mid_link\")",
+              "animeName": {
+                  "animeName": "getElement(\"a > h3\").text",
+                  "seperator": ""
+              },
+              "animeURL": {
+                  "animeURL": "getElement(\"a\").params.href",
+                  "seperator": "getRegex(\".+\/(.*[|\\w])\")"
+              },
+              "urlExtras": {
+                  "animeURL": "baseURL + '/' + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
+              }
           }
-        }
       }
-    ],
-    "sources": [
-      {
-        "request": {
+  }],
+  "sources": [{
+      "request": {
           "url": "animeURL",
           "method": "GET",
           "headers": {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-            "Referer": "https://www.animerush.tv"
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+              "Referer": "https://www.animerush.tv"
           },
-          "mainBody": "getElement(\"div.episodes\")",
+          "mainBody": "getElement(\"div.embed_holder\")",
           "items": {
-            "itemSelector": "getElement(\"div.episode1\")",
-            "sourceName": {
-              "sourceName": "getElement(\"span\").text",
-              "seperator": ""
-            },
-            "sourceURL": {
-              "sourceURL": "getElement(\"a\").params.data-video",
-              "seperator": ""
-            }
+              "itemSelector": "getElement(\"iframe\")",
+              "sourceName": {
+                  "sourceName": "getElement(\" \").text",
+                  "seperator": ""
+              },
+              "sourceURL": {
+                  "sourceURL": "getElement(\" \").params.src",
+                  "seperator": ""
+              }
           }
-        }
       }
-    ]
-  }
+  }]
+}
