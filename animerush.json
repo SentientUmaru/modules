@@ -35,12 +35,12 @@
           "items": {
             "itemSelector": "getElement(\"div.search-page_in_box_mid_link\")",
             "animeName": {
-              "animeName": "getElement(\"h4\").params.title",
+              "animeName": "getElement(\"h3\").params.title",
               "seperator": ""
             },
             "animeURL": {
               "animeURL": "getElement(\"div.search-page_in_box_mid_link > a\").params.href",
-              "seperator": "//"
+              "seperator": ""
             },
             "yearInfo": {
               "animeYear": "getElement(\"p.released\").text",
