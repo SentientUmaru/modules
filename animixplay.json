@@ -31,15 +31,15 @@
               "Referer": "https://animixplay.to",
               "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
           },
-          "mainBody": "getElement(\"div.resultAlt\")",
+          "mainBody": "getElement(\"div.resultplace\")",
           "items": {
-              "itemSelector": "getElement(\"div.resultm\")",
+              "itemSelector": "getElement(\"div.result1\")",
               "animeName": {
                   "animeName": "getElement(\"h5\").text",
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"div.searchimg\").params.data-setbg",
+                  "animeURL": "getElement(\"div.img\").params.data-setbg",
                   "seperator": "getRegex(.*\/(.*)\.).lower"
               },
               "yearInfo": {
