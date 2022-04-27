@@ -47,7 +47,7 @@
               "seperator": ""
             },
             "urlExtras": {
-              "animeURL": "baseURL + '/anime/' + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
+              "animeURL": "baseURL + '/anime' + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
             }
           }
         }
