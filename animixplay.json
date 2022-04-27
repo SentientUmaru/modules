@@ -39,7 +39,7 @@
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"div.searchimg\").params.data-setbg",
+                  "animeURL": "getElement(\"resultimg\").params.data-setbg",
                   "seperator": "getRegex(.*\/(.*).).lower"
               },
               "yearInfo": {
