@@ -33,21 +33,21 @@
           },
           "mainBody": "getElement(\"div.resultAlt\")",
           "items": {
-              "itemSelector": "getElement(\"searchresult\")",
+              "itemSelector": "getElement(\"div.resultm\")",
               "animeName": {
                   "animeName": "getElement(\"h5\").text",
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"resultimg\").params.data-setbg",
-                  "seperator": "getRegex(.*\/(.*).).lower"
+                  "animeURL": "getElement(\"div.searchimg\").params.data-setbg",
+                  "seperator": "getRegex(.*\/(.*)\/.).lower"
               },
               "yearInfo": {
                   "animeYear": "getElement(\"div.ep\").text",
                   "seperator": ""
               },
               "urlExtras": {
-                  "animeURL": "baseURL + '/watch?name=' + animeURL + '&episode=' + '<EPNUMB>'"
+                  "animeURL": "baseURL + '/v1?name=' + animeURL + '&episode=' + '<EPNUMB>'"
               }
           }
       }
