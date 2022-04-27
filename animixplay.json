@@ -32,16 +32,16 @@
               "Referer": "https://animixplay.to",
               "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
           },
-          "mainBody": "getElement(\"span\")",
+          "mainBody": "getElement(\"div.resultplace\")",
           "items": {
-              "itemSelector": "getElement(\"div.product__item\")",
+              "itemSelector": "getElement(\"li\")",
               "animeName": {
                   "animeName": "getElement(\"h5\").text",
                   "seperator": ""
               },
               "animeURL": {
-                  "animeURL": "getElement(\"div.product__item__pic\").params.data-setbg",
-                  "seperator": "getRegex(\".*\/(.*)\\.\").lower"
+                  "animeURL": "getElement(\"div.img\").params.data-setbg",
+                  "seperator": "/v1"
               },
               "yearInfo": {
                   "animeYear": "getElement(\"div.ep\").text",
