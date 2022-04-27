@@ -40,7 +40,7 @@
             },
             "animeURL": {
               "animeURL": "getElement(\"div.search-page_in_box_mid_link > a\").params.href",
-              "seperator": "/anime"
+              "seperator": "/anime/"
             },
             "yearInfo": {
               "animeYear": "getElement(\"p.released\").text",
