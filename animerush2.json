@@ -63,7 +63,7 @@
                     "seperator": ""
                 },
                 "sourceURL": {
-                    "sourceURL": "getElement(\"div.episode-mirror-details_on > a\").params.src",
+                    "sourceURL": "getElement(\"div.episode-mirror-details > a\").href",
                     "seperator": ""
                 }
             }
