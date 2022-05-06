@@ -1,17 +1,6 @@
-This is where i store and test my modules, most will probably not work.
+#This is where i store and test my modules, most will probably not work.
 
-GenoAnime - Working
-
-AniMixPlay - Removed
-
-AnimeHeaven - Not Working
-
-9Anime - Removed
-
-AnimeRush - Added and not working
-
-App that requires these un-official modules will probably require the raw of the github link unless that changes in the future
-
-Only GenoAnime works, Dont waste your time adding the others
-
-GenoAnimeT2.json is where i test in SO probably dont add it 
+### Current Modules
+| WORKING | BROKEN |
+| [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) |
+| [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json) |
