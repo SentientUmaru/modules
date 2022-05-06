@@ -1,7 +1,7 @@
 {
     "moduleInfo": {
         "apiVersion": 0.11,
-        "name": "AnimeRush",
+        "name": "AnimeRush2",
         "acronym": "AR2",
         "description": "Scrapes anime from AnimeRush's website, Alt Version",
         "version": 1.0,
