@@ -3,7 +3,7 @@
 ### Current Modules
 | WORKING | BROKEN |
 | ------- | ------- |
-| [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) | [AnimeHeave](https://raw.githubusercontent.com/SentientUmaru/modules/main/animeheaven.json)
+| [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) | [AnimeHeaven](https://raw.githubusercontent.com/SentientUmaru/modules/main/animeheaven.json)
 | [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json) |
 
 ### Testing Modules
