@@ -4,5 +4,4 @@
 | WORKING | BROKEN |
 | ------- | ------- |
 | [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) |
-
 | [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json) |
