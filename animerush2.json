@@ -63,7 +63,7 @@
                     "seperator": ""
                 },
                 "sourceURL": {
-                    "sourceURL": "getElement(\" \").params.src",
+                    "sourceURL": "getElement(\"h3 > a\").params.src",
                     "seperator": ""
                 }
             }
