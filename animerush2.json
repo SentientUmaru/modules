@@ -2,8 +2,8 @@
     "moduleInfo": {
         "apiVersion": 0.11,
         "name": "AnimeRush",
-        "acronym": "AR",
-        "description": "Scrapes anime from AnimeRush's website",
+        "acronym": "AR2",
+        "description": "Scrapes anime from AnimeRush's website, Alt Version",
         "version": 1.0,
         "language": ["JPN", "ENG"],
         "baseURL": "https://www.animerush.tv",
