@@ -2,7 +2,7 @@
     "moduleInfo": {
       "apiVersion": 0.11,
       "name": "MasterAnime",
-      "acronym": "AS",
+      "acronym": "MA",
       "description": "Scrapes data from masteranime.es website",
       "version": 1.0,
       "language": ["JPN", "ENG"],
