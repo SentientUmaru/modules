@@ -31,15 +31,15 @@
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
             "Referer": "https://masteranime.es"
           },
-          "mainBody": "getElement(\"div.explore\")",
+          "mainBody": "getElement(\"div.anime\")",
           "items": {
-            "itemSelector": "getElement(\"div.anime\")",
+            "itemSelector": "getElement(\"div.info\")",
             "animeName": {
-              "animeName": "getElement(\"div.info > h3 > a\").text",
+              "animeName": "getElement(\"h3 > a\").text",
               "seperator": ""
             },
             "animeURL": {
-              "animeURL": "getElement(\"div.info > h3 > a\").params.href",
+              "animeURL": "getElement(\"h3 > a\").params.href",
               "seperator": ""
             },
             "urlExtras": {
