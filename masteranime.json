@@ -1,0 +1,76 @@
+{
+    "moduleInfo": {
+      "apiVersion": 0.11,
+      "name": "MasterAnime",
+      "acronym": "AS",
+      "description": "Scrapes data from masteranime.es website",
+      "version": 1.0,
+      "language": ["JPN", "ENG"],
+      "baseURL": "https://masteranime.es",
+      "developer": "SentientUmaru",
+      "developerURL": "https://github.com/SentientUmaru",
+      "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/masteranime.json",
+      "searchRequired": true,
+      "episodesRequired": false,
+      "dubIdentifier": " (dub)"
+    },
+    "global": {
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+        "Referer": "https://masteranime.es"
+      },
+      "seperator": "+",
+      "noResolve": []
+    },
+    "search": [
+      {
+        "request": {
+          "url": "/search/<ANIME_NAME>",
+          "method": "GET",
+          "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+            "Referer": "https://masteranime.es"
+          },
+          "mainBody": "getElement(\"div.main\")",
+          "items": {
+            "itemSelector": "getElement(\"div.anime\")",
+            "animeName": {
+              "animeName": "getElement(\"h6 > a\").text",
+              "seperator": ""
+            },
+            "animeURL": {
+              "animeURL": "getElement(\"h6 > a\").params.href",
+              "seperator": ""
+            },
+            "urlExtras": {
+              "animeURL": "baseURL + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
+            }
+          }
+        }
+      }
+    ],
+    "sources": [
+      {
+        "request": {
+          "url": "animeURL",
+          "method": "GET",
+          "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+            "Referer": "https://masteranime.es"
+          },
+          "mainBody": "getElement(\"body\")",
+          "items": {
+            "itemSelector": "getElement(\"div.player_container\")",
+            "sourceURL": {
+              "sourceURL": "getElement(\"div.jw-media jw-reset\").params.src",
+              "seperator": ""
+            },
+            "sourceName": {
+              "sourceName": "getElement(\" \").text",
+              "seperator": ""
+            }
+          }
+        }
+      }
+    ]
+  }
