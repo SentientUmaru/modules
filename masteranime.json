@@ -35,11 +35,11 @@
           "items": {
             "itemSelector": "getElement(\"div.anime\")",
             "animeName": {
-              "animeName": "getElement(\"h3 > a\").text",
+              "animeName": "getElement(\"div.info > h3 > a\").text",
               "seperator": ""
             },
             "animeURL": {
-              "animeURL": "getElement(\"h3 > a\").params.href",
+              "animeURL": "getElement(\"div.info > h3 > a\").params.href",
               "seperator": ""
             },
             "urlExtras": {
