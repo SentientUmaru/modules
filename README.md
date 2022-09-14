@@ -19,8 +19,8 @@ Masteranime has letters after their search names which i havent figured out how 
 
 animension.to, animedao.to, lite.animevibe.se, and 4anime.gg are good website's but will probably require regex so i wont be doing it
 
-##### The following is just personal notes as i learn about HTML (still a novice)
-
+### The following is just personal notes as i learn about HTML (still a novice)
+#### This is just for building the modules. Disregard if you think its for anything else.
 CardDeck is a class so you’d need to call it like this 
 
 Line 9: getElement(\"ul.CardDeck\") 
