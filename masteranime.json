@@ -6,7 +6,7 @@
       "description": "Scrapes data from masteranime.es website",
       "version": 1.0,
       "language": ["JPN", "ENG"],
-      "baseURL": "https://masteranime.es",
+      "baseURL": "https://masteranime.vip",
       "developer": "SentientUmaru",
       "developerURL": "https://github.com/SentientUmaru",
       "moduleURL": "https://raw.githubusercontent.com/SentientUmaru/modules/main/masteranime.json",
@@ -17,60 +17,56 @@
     "global": {
       "headers": {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-        "Referer": "https://masteranime.es"
+        "Referer": "https://masteranime.vip"
       },
       "seperator": "+",
       "noResolve": []
     },
-    "search": [
-      {
-        "request": {
-          "url": "/search/<ANIME_NAME>",
+    "search":  [{
+      "request": {
+          "url": "/search?keyword=<ANIME_NAME>",
           "method": "GET",
           "headers": {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-            "Referer": "https://masteranime.es"
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+              "Referer": "https://masteranime.vip"
           },
-          "mainBody": "getElement(\"div.explore\")",
+          "mainBody": "getElement(\"div.film-list\")",
           "items": {
-            "itemSelector": "getElement(\"div.anime\")",
-            "animeName": {
-              "animeName": "getElement(\"h3 > a\").text",
-              "seperator": ""
-            },
-            "animeURL": {
-              "animeURL": "getElement(\"h3 > a\").params.href",
-              "seperator": ""
-            },
-            "urlExtras": {
-              "animeURL": "baseURL + animeURL + '-' + 'episode' + '-' + '<EPNUMB>'"
-            }
+              "itemSelector": "getElement(\"div.item\")",
+              "animeName": {
+                  "animeName": "getElement(\"a < href\").text",
+                  "seperator": ""
+              },
+              "animeURL": {
+                  "animeURL": "getElement(\"a\").params.href",
+                  "seperator": ""
+              },
+              "urlExtras": {
+                  "animeURL": "baseURL  + animeURL  + '/' + 'ep' + '-' + '<EPNUMB>'"
+              }
           }
-        }
       }
-    ],
-    "sources": [
-      {
-        "request": {
+  }],
+    "sources": [{
+      "request": {
           "url": "animeURL",
           "method": "GET",
           "headers": {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-            "Referer": "https://masteranime.es"
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+              "Referer": "https://masteranime.vip"
           },
-          "mainBody": "getElement(\"body\")",
+          "mainBody": "getElement(\"div.player\")",
           "items": {
-            "itemSelector": "getElement(\"div.player_container\")",
-            "sourceURL": {
-              "sourceURL": "getElement(\"div.jw-media jw-reset\").params.src",
-              "seperator": ""
-            },
-            "sourceName": {
-              "sourceName": "getElement(\" \").text",
-              "seperator": ""
-            }
+              "itemSelector": "getElement(\"iframe\")",
+              "sourceName": {
+                  "sourceName": "getElement(\" \").text",
+                  "seperator": ""
+              },
+              "sourceURL": {
+                  "sourceURL": "getElement(\" \").params.src",
+                  "seperator": ""
+              }
           }
-        }
       }
-    ]
-  }
+  }]
+}

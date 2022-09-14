@@ -1,0 +1,4 @@
+{
+    "responseType": "json",
+    "mainBody": "getJSON(\"response.body\").json"
+}
