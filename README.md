@@ -4,7 +4,7 @@
 | WORKING | BROKEN |
 | ------- | ------- |
 | [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) | [AnimeHeaven](https://raw.githubusercontent.com/SentientUmaru/modules/main/animeheaven.json)
-| [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json) |
+| [AnimeRush2](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush2.json) | [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json)
 
 ### Testing Modules
 #### There will be multiple Failed attempts and commits on these
