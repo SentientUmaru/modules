@@ -14,3 +14,5 @@
 | [GenoAnimeT2](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanimeT2.json) | The Original version of this module is working fine |
 
 Once i have a compiler i could use for these, a lot of them should go into the working category and allow me to add new ones.
+
+Masteranime has letters after their search names which i havent figured out how to fitler out
