@@ -16,3 +16,19 @@
 Once i have a compiler i could use for these, a lot of them should go into the working category and allow me to add new ones.
 
 Masteranime has letters after their search names which i havent figured out how to fitler out
+
+animension.to, animedao.to, lite.animevibe.se, and 4anime.gg are good website's but will probably require regex so i wont be doing it
+
+##### The following is just personal notes as i learn about HTML (still a novice)
+
+CardDeck is a class so you’d need to call it like this 
+
+Line 9: getElement(\"ul.CardDeck\") 
+
+So for classes you use the . Operator and for ids you use #
+Make sure to use \ before quotes\
+
+Example= a class="tip" href="https://chia-anime.su/anime/one-piece"
+to (\"a.tip\") if needed to specify class
+
+similar to article
