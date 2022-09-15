@@ -1,5 +1,3 @@
-<!--This Module will not work till i remove the random letters of the href and is currently unfinished--> 
-
 {
     "moduleInfo": {
       "apiVersion": 0.11,
@@ -25,50 +23,50 @@
       "noResolve": []
     },
     "search":  [{
-      "request": {
-          "url": "/search?keyword=<ANIME_NAME>",
-          "method": "GET",
-          "headers": {
-              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-              "Referer": "https://masteranime.vip"
-          },
-          "mainBody": "getElement(\"div.film-list\")",
-          "items": {
-              "itemSelector": "getElement(\"div.item\")",
-              "animeName": {
-                  "animeName": "getElement(\"a < href\").text",
-                  "seperator": ""
-              },
-              "animeURL": {
-                  "animeURL": "getElement(\"a\").params.href",
-                  "seperator": ""
-              },
-              "urlExtras": {
-                  "animeURL": "baseURL  + animeURL  + '/' + 'ep' + '-' + '<EPNUMB>'"
-              }
-          }
-      }
-  }],
+        "request": {
+            "url": "/search?keyword=<ANIME_NAME>",
+            "method": "GET",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                "Referer": "https://masteranime.vip"
+            },
+            "mainBody": "getElement(\"div.film-list\")",
+            "items": {
+                "itemSelector": "getElement(\"div.item\")",
+                "animeName": {
+                    "animeName": "getElement(\"a.name\").text",
+                    "seperator": ""
+                },
+                "animeURL": {
+                    "animeURL": "getElement(\"a < href\").params.href",
+                    "seperator": ""
+                },
+                "urlExtras": {
+                    "animeURL": "baseURL  + animeURL  + '/' + 'ep' + '-' + '<EPNUMB>'"
+                }
+            }
+        }
+    }],
     "sources": [{
-      "request": {
-          "url": "animeURL",
-          "method": "GET",
-          "headers": {
-              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
-              "Referer": "https://masteranime.vip"
-          },
-          "mainBody": "getElement(\"div.player\")",
-          "items": {
-              "itemSelector": "getElement(\"iframe\")",
-              "sourceName": {
-                  "sourceName": "getElement(\" \").text",
-                  "seperator": ""
-              },
-              "sourceURL": {
-                  "sourceURL": "getElement(\" \").params.src",
-                  "seperator": ""
-              }
-          }
-      }
-  }]
+        "request": {
+            "url": "animeURL",
+            "method": "GET",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                "Referer": "https://masteranime.vip"
+            },
+            "mainBody": "getElement(\"div#body\")",
+            "items": {
+                "itemSelector": "getElement(\"div.player\")",
+                "sourceName": {
+                    "sourceName": "getElement(\"div.widget-title\").text",
+                    "seperator": ""
+                },
+                "sourceURL": {
+                    "sourceURL": "getElement(\"iframe\").params.src",
+                    "seperator": ""
+                }
+            }
+        }
+    }]
 }
