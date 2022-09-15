@@ -19,8 +19,6 @@ Module Builder is ready so i will start pumping more modules out
 
 -Masteranime has letters after their search names which i havent figured out how to fitler out
 
--animension.to, animedao.to, lite.animevibe.se, and 4anime.gg are good website's but will probably require regex so i wont be doing it
-
 ### The following is just personal notes as i learn about HTML (still a novice)
 #### This is just for building the modules. Disregard if you think its for anything else.
 CardDeck is a class so you’d need to call it like this 
@@ -36,4 +34,4 @@ to (\"a.tip\") if needed to specify class
 similar to article
 
 
--Module Building Temp is just a another testing module
+-Module Building List is the order in which i will attempt to make the modules
