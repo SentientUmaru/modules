@@ -6,7 +6,7 @@
 | [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) | [AnimeHeaven](https://raw.githubusercontent.com/SentientUmaru/modules/main/animeheaven.json)
 | [AnimeRush2](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush2.json) | [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json)
 | [7Anime](https://raw.githubusercontent.com/SentientUmaru/modules/main/7Anime.json) | |
-| [Chiaanime](https://raw.githubusercontent.com/SentientUmaru/modules/main/ChiaAnime.json) | The links on this website differ for certain episodes, might not always work |
+| [ChiaAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/ChiaAnime.json) | The links on this website differ for certain episodes, might not always work |
 
 ### Testing Modules
 #### There will be multiple Failed attempts and commits on these
