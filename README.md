@@ -11,8 +11,8 @@
 #### There will be multiple Failed attempts and commits on these
 | TESTING | DESCRIPTION |
 | ------- | ------- |
-| [AnimeRush2](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush2.json) | Sometimes MP4Upload links break on AnimeRush.json, So i will attempt to make a module that uses multilinks |
-| [GenoAnimeT2](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanimeT2.json) | The Original version of this module is working fine |
+| [AnimeRush2](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush2.json) | Main Broke so this has now became the main|
+
 
 Module Builder is ready so i will start pumping more modules out
 
