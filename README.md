@@ -5,7 +5,7 @@
 | ------- | ------- |
 | [GenoAnime](https://raw.githubusercontent.com/SentientUmaru/modules/main/genoanime.json) | [AnimeHeaven](https://raw.githubusercontent.com/SentientUmaru/modules/main/animeheaven.json)
 | [AnimeRush2](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush2.json) | [AnimeRush](https://raw.githubusercontent.com/SentientUmaru/modules/main/animerush.json)
-| [7Anime](https://raw.githubusercontent.com/SentientUmaru/modules/main/7anime.json) | |
+| [7Anime](https://raw.githubusercontent.com/SentientUmaru/modules/main/7Anime.json) | |
 
 ### Testing Modules
 #### There will be multiple Failed attempts and commits on these
